@@ -6,7 +6,8 @@ const axios = require("axios");
 
 // getting user profile
 user_route.get("/me", async(req, res)=>{
-    const access_token = req.body.access_token;
+    const access_token = await req.headers.authorization;
+    console.log(access_token);
 
     try{
         const response = await axios.get(
