@@ -48,7 +48,7 @@ user_route.get("me/tracks", async(req, res)=>{
 
 // getting user all top artists where limit is 10
 user_route.get("/me/artists", async(req, res)=>{
-    const access_token = req.body.access_token;
+  const access_token = await req.headers.authorization;
     
     try{
         const response = await axios.get(
