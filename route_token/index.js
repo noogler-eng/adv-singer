@@ -26,7 +26,7 @@ token_route.use(cors());
 token_route.get("/login", (req, res) => {
   const state = generateRandomString(16);
   const scope =
-    "user-read-private user-read-email user-library-read playlist-modify-private playlist-modify-public user-top-read";
+    "user-read-private user-read-email user-library-read playlist-modify-private playlist-modify-public user-top-read user-follow-read";
 
   res.redirect(
     "https://accounts.spotify.com/authorize?" +
