@@ -10,7 +10,7 @@ dotenv.config();
 const token_route = express.Router();
 
 const client_id = process.env.CLIENT_ID;
-const redirect_uri = "http://localhost:8080/callback";
+const redirect_uri = "https://adv-singer.onrender.com/callback";
 
 function generateRandomString(length) {
   return crypto
@@ -94,7 +94,7 @@ token_route.get("/callback", async function (req, res) {
       console.log(access_token);
 
       // Redirect to frontend with the token in the URL
-      res.redirect(`http://localhost:5173/?access_token=${access_token}`);
+      res.redirect(`https://listen-anywhere.vercel.app/?access_token=${access_token}`);
     } catch (error) {
       res.status(400).json({
         msg: "Invalid token or request failed",
